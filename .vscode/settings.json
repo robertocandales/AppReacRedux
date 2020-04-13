@@ -1,0 +1,16 @@
+{
+    "eslint.alwaysShowStatus": true,
+    "eslint.enable": false,
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.variables": {
+    
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+      },
+    "emmet.triggerExpansionOnTab": true,
+    "json.schemas": [
+    
+    ],
+    "cSpell.language": ",es"
+}
