@@ -8,22 +8,26 @@ import BuscarNombre from "./BuscarNombre";
 function Users() {
   // declaramos displach para llamar a la acción o acciones
   const dispatch = useDispatch();
-  const ususarios = useSelector((store) => store.users.arrayUsers);
+  const { arrayUsers: ususarios, isLoading } = useSelector(
+    (store) => store.users
+  );
 
   useEffect(() => {
     dispatch(usersAction());
-  }, [dispatch]);
+  }, [dispatch, usersAction]);
 
   return (
     <div className="container mt-5">
       {/* <button onClick={() => dispatch(usersAction())}>Search User</button> */}
 
       <h1>Ejercicio con React/Redux</h1>
-      {ususarios.map((u, index) => (
-        <ul key={index}>
-          <li>{u.name}</li>
-        </ul>
-      ))}
+      {isLoading
+        ? "Cargando data"
+        : ususarios.map((u, index) => (
+            <ul key={index}>
+              <li>{u.name}</li>
+            </ul>
+          ))}
       <BuscarNombre />
     </div>
   );
