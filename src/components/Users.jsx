@@ -8,9 +8,7 @@ import BuscarNombre from "./BuscarNombre";
 function Users() {
   // declaramos displach para llamar a la acción o acciones
   const dispatch = useDispatch();
-  const { arrayUsers: ususarios, isLoading } = useSelector(
-    (store) => store.users
-  );
+  const { arrayUsers: nombre, isLoading } = useSelector((store) => store.users);
 
   useEffect(() => {
     dispatch(usersAction());
@@ -23,7 +21,7 @@ function Users() {
       <h1>Ejercicio con React/Redux</h1>
       {isLoading
         ? "Cargando data"
-        : ususarios.map((u, index) => (
+        : nombre.map((u, index) => (
             <ul key={index}>
               <li>{u.name}</li>
             </ul>

@@ -73,7 +73,9 @@ export const usersAction = () => async (dispatch, getState) => {
 };
 
 export const buscarNameEnApi = (text) => (dispatch, getState) => {
-  const user = getState().users.arrayUsers.filter((u) => u.name.includes(text));
+  const user = getState().users.arrayUsers.filter((u) =>
+    u.name.toLowerCase().includes(text)
+  );
 
   try {
     dispatch({
