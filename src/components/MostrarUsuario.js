@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { eliminarNombre } from "../redux/users";
 
 function MostrarUsuario() {
-  const { nombre } = useSelector((store) => store.users);
+  const { nombre, ...otherProps } = useSelector((store) => store.users);
+
+
   const dispatch = useDispatch();
   //console.log(nombre);
 
