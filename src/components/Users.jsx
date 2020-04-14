@@ -15,18 +15,35 @@ function Users() {
   }, [dispatch, usersAction]);
 
   return (
-    <div className="container mt-5">
-      {/* <button onClick={() => dispatch(usersAction())}>Search User</button> */}
+    <div>
+      <div className="container-fluid mt-5">
+        <h2 className="text-center ">Use API with React & Redux</h2>
 
-      <h1>Ejercicio con React/Redux</h1>
-      {isLoading
-        ? "Cargando data"
-        : nombre.map((u, index) => (
-            <ul key={index}>
-              <li>{u.name}</li>
-            </ul>
-          ))}
-      <BuscarNombre />
+        <div className="container align-content-center align-self-center mt-5">
+          <h4>
+            <b>API Data</b>{" "}
+          </h4>
+          <div className="row ">
+            <div className="col-sm-6">
+              {isLoading ? (
+                <h4>Loading data</h4>
+              ) : (
+                nombre.map((u, index) => (
+                  <ul key={index}>
+                    <li>{u.name}</li>
+                  </ul>
+                ))
+              )}
+            </div>
+
+            <div className="col-sm-6">
+              <BuscarNombre />
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
+      <div></div>
     </div>
   );
 }

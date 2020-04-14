@@ -22,22 +22,24 @@ function BuscarNombre() {
   };
 
   return (
-    <div className="container">
-      <form onSubmit={submithandle}>
-        <div className="row">
-          <div className="col 1 md-6">
-            <input
-              type="text"
-              name="input"
-              onChange={inputHandle}
-              className="form-control"
-              placeholder="Nombre de Usuario segun lista superior"
-            />
-          </div>
-          <div className="col 1 md-6">
-            <button type="submit" className="btn btn-primary">
-              Obtener Datos del Usuario
-            </button>
+    <div>
+      <form onSubmit={submithandle} className="text-center">
+        <div className="container text-center align-content-center">
+          <div className="row">
+            <div className="sm-3">
+              <input
+                type="text"
+                name="input"
+                onChange={inputHandle}
+                className="form-control"
+                placeholder="Nombre de Usuario"
+              />
+            </div>
+            <div className="sm-3">
+              <button type="submit" className="btn btn-primary">
+                Enviar
+              </button>
+            </div>
           </div>
         </div>
       </form>
